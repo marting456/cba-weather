@@ -4,11 +4,22 @@
 - pressure depends on elevation
 - humidity depends on distance from equator
 
-## How to build and run
+## How to build and run (outside Eclipse)
 ```
-martin@martin-HOME-PC /cygdrive/c/dev/workspace/cba-weather
-$ gradle clean build
-:clean
+martin@martin-HOME-PC /cygdrive/c/temp
+$ git clone https://github.com/marting456/cba-weather.git
+Cloning into 'cba-weather'...
+remote: Counting objects: 43, done.
+remote: Compressing objects: 100% (29/29), done.
+remote: Total 43 (delta 8), reused 36 (delta 4), pack-reused 0
+Unpacking objects: 100% (43/43), done.
+Checking connectivity... done.
+
+martin@martin-HOME-PC /cygdrive/c/temp
+$ cd cba-weather/
+
+martin@martin-HOME-PC /cygdrive/c/temp/cba-weather
+$ gradle build
 :compileJava
 :processResources
 :classes
@@ -23,21 +34,21 @@ $ gradle clean build
 
 BUILD SUCCESSFUL
 
-Total time: 8.931 secs
+Total time: 8.521 secs
 
-martin@martin-HOME-PC /cygdrive/c/dev/workspace/cba-weather
-$ cd bin
+martin@martin-HOME-PC /cygdrive/c/temp/cba-weather
+$ java -jar build/libs/cba-weather-1.0.jar
+SYD|-33.56, 151.1, 21|2015-04-19T18:40:47Z|Sunny|13.1|1008.8|59|
+BUD|47.26, 19.15, 495|2016-06-27T04:32:29Z|Sunny|11.1|1012.6|45|
+JFK|40.38, 73.46, 13|2015-06-04T22:31:18Z|Sunny|11.0|1005.6|50|
+SVO|55.58, 37.24, 630|2016-01-02T11:58:30Z|Snow|-4.0|1018.2|35|
+GIG|-22.48, 43.14, 28|2016-09-03T14:01:39Z|Rain|29.7|1007.2|68|
+GCJ|-25.59, 28.08, 5327|2016-06-07T16:47:00Z|Rain|18.3|1062.4|63|
+LHR|51.28, 0.27, 80|2015-04-13T18:17:39Z|Rain|1.5|1006.1|40|
+SIN|1.21, 103.59, 22|2015-11-12T19:20:30Z|Sunny|39.2|1007.7|85|
+LAX|33.56, 118.24, 126|2015-09-21T12:00:40Z|Rain|21.7|1012.8|60|
+HND|35.33, 139.46, 35|2016-02-27T07:34:49Z|Rain|8.4|1015.0|52|
 
-martin@martin-HOME-PC /cygdrive/c/dev/workspace/cba-weather/bin
-$ java org.marting.weather.WeatherPredictor
-SYD|-33.56, 151.1, 21|2015-07-15T01:44:06Z|Rain|2.9|1006.3|58|
-BUD|47.26, 19.15, 495|2015-04-16T22:50:56Z|Snow|-3.7|1014.1|44|
-JFK|40.38, 73.46, 13|2016-03-10T11:43:22Z|Sunny|11.8|1014.1|50|
-SVO|55.58, 37.24, 630|2016-07-20T08:05:42Z|Rain|8.1|1015.0|30|
-GIG|-22.48, 43.14, 28|2016-11-22T06:41:35Z|Rain|32.5|1014.2|72|
-GCJ|-25.59, 28.08, 5327|2015-04-16T05:49:08Z|Sunny|19.9|1062.1|62|
-LHR|51.28, 0.27, 80|2015-09-16T03:54:39Z|Sunny|-3.4|1012.5|43|
-SIN|1.21, 103.59, 22|2016-05-28T09:23:44Z|Sunny|56.2|1007.1|83|
-LAX|33.56, 118.24, 126|2016-09-16T01:33:28Z|Rain|16.6|1011.1|60|
-HND|35.33, 139.46, 35|2015-11-30T02:50:07Z|Rain|5.2|1006.1|57|
+martin@martin-HOME-PC /cygdrive/c/temp/cba-weather
+
 ```
