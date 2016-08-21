@@ -1,3 +1,10 @@
+## Assumptions
+- temperature depends on month of the year, distance from equator, time of the day
+- rain depends on distance from equator
+- pressure depends on elevation
+- humidity depends on distance from equator
+
+## How to build and run
 ```
 martin@martin-HOME-PC /cygdrive/c/dev/workspace/cba-weather
 $ gradle clean build
