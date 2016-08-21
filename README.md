@@ -50,5 +50,8 @@ LAX|33.56, 118.24, 126|2015-09-21T12:00:40Z|Rain|21.7|1012.8|60|
 HND|35.33, 139.46, 35|2016-02-27T07:34:49Z|Rain|8.4|1015.0|52|
 
 martin@martin-HOME-PC /cygdrive/c/temp/cba-weather
+$ java -jar build/libs/cba-weather-1.0.jar SYD LAX
+SYD|-33.56, 151.1, 21|2015-01-19T05:54:08Z|Rain|18.2|1009.3|60|
+LAX|33.56, 118.24, 126|2016-01-11T03:05:03Z|Sunny|1.9|1010.9|56|
 
 ```
