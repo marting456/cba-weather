@@ -1,7 +1,6 @@
 package org.marting.weather;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -23,7 +22,7 @@ public class WeatherPredictor {
 
 	private static final long JAN_1ST_2015 = 1420030800000L;
 	private static final long MILLISECONDS_IN_A_YEAR = 31556952000L;
-	private static final String WEATHER_STATIONS_FILE = "GlobalAirportDatabase.txt";
+	private static final String WEATHER_STATIONS_FILE = "/GlobalAirportDatabase.txt";
 	private static final String[] DEFAULT_DATA =
 		{ "SYD", "BUD", "JFK", "SVO", "GIG", "GCJ", "LHR", "SIN", "LAX", "HND" };
 
@@ -72,9 +71,10 @@ public class WeatherPredictor {
 
 		Map<String, WeatherStation> weatherStations = new HashMap<String, WeatherStation>();
 		try {
-			ClassLoader classLoader = getClass().getClassLoader();
-			File file = new File(classLoader.getResource(WEATHER_STATIONS_FILE).getFile());
-			Scanner scanner = new Scanner(file);
+//			ClassLoader classLoader = getClass().getClassLoader();
+//			File file = new File(classLoader.getResource(WEATHER_STATIONS_FILE).getFile());
+			InputStream is = getClass().getResourceAsStream(WEATHER_STATIONS_FILE);
+			Scanner scanner = new Scanner(is);
 			while (scanner.hasNextLine()) {
 				String line = scanner.nextLine();
 				String array[] = line.split(":");
@@ -93,7 +93,7 @@ public class WeatherPredictor {
 				weatherStations.put(weatherStation.getCityCode(), weatherStation);
 			}
 			scanner.close();
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return weatherStations;
